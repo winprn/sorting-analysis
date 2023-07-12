@@ -14,4 +14,4 @@ add_executable(sorting_analysis
         include/SortBase.h
         src/DataGenerator.cpp
         src/InsertionSort.cpp
-        src/main.cpp include/SortBase.cpp include/BubbleSort.cpp)
+        src/main.cpp include/SortBase.cpp include/BubbleSort.cpp tests/test.h external/doctest.h tests/test.cpp src/DataGenerator.h)

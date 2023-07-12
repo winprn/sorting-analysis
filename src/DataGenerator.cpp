@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <fstream>
 #include <cmath>
-#include <time.h>
+#include "DataGenerator.h"
 using namespace std;
 
 template <class T>

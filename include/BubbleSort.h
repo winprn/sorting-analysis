@@ -6,6 +6,7 @@
 class BubbleSort: public SortBase {
 public:
     BubbleSort(): SortBase(){}
+    BubbleSort(int *a, int n): SortBase(a, n){}
     void sort();
     void sortWithComparison();
 };

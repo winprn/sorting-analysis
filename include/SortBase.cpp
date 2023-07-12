@@ -11,6 +11,10 @@ SortBase::SortBase(int *a, int size) {
     for (int i = 0; i < m_size; i++) m_array[i] = a[i];
 }
 
+int *SortBase::getArray() const {
+    return m_array;
+}
+
 int SortBase::getComparison() const {
     return m_count_comparison;
 }

@@ -14,3 +14,9 @@ SortBase::SortBase(int *a, int size) {
 int SortBase::getComparison() const {
     return m_count_comparison;
 }
+
+double SortBase::getDuration() const{
+    std::chrono::duration<double> duration = m_timeEnd - m_timeStart;
+    double seconds = duration.count();
+    return seconds;
+}

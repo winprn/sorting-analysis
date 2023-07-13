@@ -23,3 +23,9 @@ SortBase::~SortBase()
     }
     m_count_comparison = m_size = 0;
 }
+
+double SortBase::getDuration() const{
+    std::chrono::duration<double> duration = m_timeEnd - m_timeStart;
+    double seconds = duration.count();
+    return seconds;
+}

@@ -1,7 +1,13 @@
+#include "SortBase.h"
+
 #ifndef INSERTION_SORT
 #define INSERTION_SORT
 
-void insertionSort(int* arr, int n); 
-void insertionSortWithCount(int* arr, int n, int& count_comparison);
+class InsertionSort : public SortBase {
+public:
+    InsertionSort(): SortBase(){}
+    void sort();
+    void sortWithComparison();
+};
 
 #endif

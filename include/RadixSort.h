@@ -1,6 +1,13 @@
+#include "SortBase.h"
+
 #ifndef RADIX_SORT
 #define RADIX_SORT
 
-void radixSort(int* arr, int n); 
+class RadixSort : public SortBase {
+public:
+    RadixSort(): SortBase(){}
+    void sort();
+    void sortWithComparison();
+};
 
 #endif

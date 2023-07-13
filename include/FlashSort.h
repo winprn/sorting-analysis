@@ -1,6 +1,13 @@
-#ifndef FLASHSORT
-#define FLASHSORT
+#include "SortBase.h"
 
-void flashSort(int* arr, int n); 
+#ifndef FLASH_SORT
+#define FLASH_SORT
+
+class FlashSort : public SortBase {
+public:
+    FlashSort(): SortBase(){}
+    void sort();
+    void sortWithComparison();
+};
 
 #endif

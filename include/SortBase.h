@@ -16,11 +16,12 @@ protected:
 public:
     SortBase();
     SortBase(int *a, int size);
+    ~SortBase();
 
     void sort();
     void sortWithComparison();
     int getComparison() const;
-
+  
     // return runtime in seconds
     double getDuration() const;
 };

@@ -1,4 +1,4 @@
-#include <SortBase.h>
+#include "SortBase.h"
 
 SortBase::SortBase() {
     m_array = nullptr;
@@ -13,4 +13,13 @@ SortBase::SortBase(int *a, int size) {
 
 int SortBase::getComparison() const {
     return m_count_comparison;
+}
+
+SortBase::~SortBase()
+{
+    if (m_array != nullptr)
+    {
+        delete[] m_array;
+    }
+    m_count_comparison = m_size = 0;
 }

@@ -1,8 +1,22 @@
+#include "SortBase.h"
+
 #ifndef MERGE_SORT
 #define MERGE_SORT
 
-void mergeSort(int* arr, int n, int left, int right); 
+class MergeSort : public SortBase {
+private:
+    void mergeSort(int left, int right);
+    void mergeTwoArrays(int left, int mid, int right);
 
-void mergeTwoArrays(int* arr1, int* arr2, int n1, int n2);
+    void mergeSortWithComparison(int left, int right);
+    void mergeTwoArraysWithComparison(int left, int mid, int right);
+
+public:
+    MergeSort(): SortBase(){}
+
+    void sort();
+    
+    void sortWithComparison();
+};
 
 #endif

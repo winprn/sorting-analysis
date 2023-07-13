@@ -16,6 +16,8 @@ public:
     void sort();
     void sortWithComparison();
     int getComparison() const;
+
+    ~SortBase();
 };
 
 #endif //SORTING_ANALYSIS_SORTBASE_H

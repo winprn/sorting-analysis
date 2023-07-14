@@ -12,6 +12,10 @@ add_executable(sorting_analysis
         include/MergeSort.h
         include/RadixSort.h
         include/SortBase.h
+        include/BubbleSort.cpp
+        include/InsertionSort.cpp
+        include/MergeSort.cpp
         src/DataGenerator.cpp
-        src/InsertionSort.cpp
-        src/main.cpp include/SortBase.cpp include/BubbleSort.cpp)
+        src/main.cpp
+        include/SortBase.cpp 
+        )

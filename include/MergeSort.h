@@ -13,6 +13,7 @@ private:
 
 public:
     MergeSort(): SortBase(){}
+    MergeSort(int* a, int n) : SortBase(a, n) {}
 
     void sort();
     

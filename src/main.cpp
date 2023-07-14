@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string.h>
 #include <time.h>
+#include "../include/InsertionSort.h"
+#include "../include/MergeSort.h"
 
 using namespace std;
 
@@ -37,6 +39,21 @@ int main(int argc, char *argv[])
                 cout << "Command 5\n";
             }
         }
+    } 
+    else {
+        int n = 50;
+        int* a = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = rand() % 1000;
+        }
+
+        MergeSort array(a, n);
+        array.display();
+        array.sortWithComparison();
+        cout << array.getComparison() << endl;
+        array.display();
+        delete[] a;
     }
     return 0;
 }

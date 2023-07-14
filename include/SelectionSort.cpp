@@ -1,27 +1,28 @@
 #include "SelectionSort.h"
+#include <iostream>
 
-void SelectionSort::sort(int *a, int n)
+void SelectionSort::sort()
 {
     m_timeStart = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < m_size; ++i)
     {
         int minPos = i;
-        for (int j = i + 1; j < n; ++j)
-            if (a[j] < a[minPos])
+        for (int j = i + 1; j < m_size; ++j)
+            if (m_array[j] < m_array[minPos])
                 minPos = j;
-        std::swap(a[i], a[minPos]);
+        std::swap(m_array[i], m_array[minPos]);
     }
     m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
-void SelectionSort::sortWithComparison(int *a, int n)
+void SelectionSort::sortWithComparison()
 {
-    for (int i = 0; m_count_comparison++ && i < n; ++i)
+    for (int i = 0; ++m_count_comparison && i < m_size; ++i)
     {
         int minPos = i;
-        for (int j = i + 1; m_count_comparison++ && j < n; ++j)
-            if (m_count_comparison++ && a[j] < a[minPos])
+        for (int j = i + 1; ++m_count_comparison && j < m_size; ++j)
+            if (++m_count_comparison && m_array[j] < m_array[minPos])
                 minPos = j;
-        std::swap(a[i], a[minPos]);
+        std::swap(m_array[i], m_array[minPos]);
     }
 }

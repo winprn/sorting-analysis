@@ -6,6 +6,7 @@
 #define SORTING_ANALYSIS_SORTBASE_H
 #include <algorithm>
 #include <chrono>
+#include <iostream>
 
 class SortBase {
 protected:
@@ -25,6 +26,8 @@ public:
   
     // return runtime in seconds
     double getDuration() const;
+
+    void printArr();
 };
 
 #endif //SORTING_ANALYSIS_SORTBASE_H

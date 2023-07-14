@@ -3,12 +3,13 @@
 #include <time.h>
 #include "../include/InsertionSort.h"
 #include "../include/MergeSort.h"
+#include "../external/doctest.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    if (argc > 1)
+    if (argc > 4)
     {
         if (strcmp(argv[1], "-a") == 0)
         {
@@ -39,21 +40,29 @@ int main(int argc, char *argv[])
                 cout << "Command 5\n";
             }
         }
-    } 
-    else {
-        int n = 50;
-        int* a = new int[n];
-        for (int i = 0; i < n; i++)
-        {
-            a[i] = rand() % 1000;
-        }
+    } else {
+        doctest::Context context;
 
-        MergeSort array(a, n);
-        array.display();
-        array.sortWithComparison();
-        cout << array.getComparison() << endl;
-        array.display();
-        delete[] a;
+        // !!! THIS IS JUST AN EXAMPLE SHOWING HOW DEFAULTS/OVERRIDES ARE SET !!!
+
+        // defaults
+        context.addFilter("test-case-exclude", "*math*"); // exclude test cases with "math" in their name
+        context.setOption("abort-after", 5);              // stop test execution after 5 failed assertions
+        context.setOption("order-by", "name");            // sort the test cases by their name
+
+        context.applyCommandLine(argc, argv);
+
+        // overrides
+        context.setOption("no-breaks", true);             // don't break in the debugger when assertions fail
+
+        int res = context.run(); // run
+
+        if(context.shouldExit()) // important - query flags (and --exit) rely on the user doing this
+            return res;          // propagate the result of the tests
+
+        int client_stuff_return_code = 0;
+        // your program - if the testing framework is integrated in your production code
+
+        return res + client_stuff_return_code; // the result from doctest is propagated here as well
     }
-    return 0;
 }

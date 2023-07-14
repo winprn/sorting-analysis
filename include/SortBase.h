@@ -21,6 +21,7 @@ public:
 
     void sort();
     void sortWithComparison();
+    int *getArray() const;
     int getComparison() const;
   
     // return runtime in seconds

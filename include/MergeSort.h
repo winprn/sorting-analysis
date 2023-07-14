@@ -1,7 +1,7 @@
-#include "SortBase.h"
-
 #ifndef MERGE_SORT
 #define MERGE_SORT
+
+#include "SortBase.h"
 
 class MergeSort : public SortBase {
 private:
@@ -10,7 +10,6 @@ private:
 
     void mergeSortWithComparison(int left, int right);
     void mergeTwoArraysWithComparison(int left, int mid, int right);
-
 public:
     MergeSort(): SortBase(){}
     MergeSort(int* a, int n) : SortBase(a, n) {}

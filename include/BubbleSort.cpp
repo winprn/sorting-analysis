@@ -1,4 +1,4 @@
-#include <BubbleSort.h>
+#include "BubbleSort.h"
 
 void BubbleSort::sort() {
     for (int i = 0; i < m_size; i++) {

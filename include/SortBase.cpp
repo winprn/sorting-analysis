@@ -33,3 +33,11 @@ double SortBase::getDuration() const{
     double seconds = duration.count();
     return seconds;
 }
+
+void SortBase::display()
+{
+    for (int i = 0; i < m_size; i++)
+    {
+        std::cout << m_array[i] << " ";
+    } std::cout << "\n";
+}

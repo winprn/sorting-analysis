@@ -4,7 +4,9 @@
 
 class ShakerSort : public SortBase
 {
-    public:
-    
+public:
+    ShakerSort(int *a, int n) : SortBase(a, n) {}
+    void sort();
+    void sortWithComparison();
 };
 #endif

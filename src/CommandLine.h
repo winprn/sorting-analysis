@@ -8,6 +8,7 @@
 #include "../include/RadixSort.h"
 #include "../include/SelectionSort.h"
 #include "../include/SortBase.h"
+#include "DataGenerator.h"
 
 using namespace std;
 

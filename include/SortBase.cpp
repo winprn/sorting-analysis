@@ -68,3 +68,14 @@ void SortBase::readFromFile(char* FileName)
     }
     ifs.close();
 }
+
+void SortBase::copyArray(int* a, int size)
+{
+    m_size = size;
+    if (m_array) delete[] m_array;
+    m_array = new int[m_size];
+    for (int i = 0; i < m_size; i++)
+    {
+        m_array[i] = a[i];
+    }
+}

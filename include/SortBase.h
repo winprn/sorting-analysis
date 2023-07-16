@@ -21,6 +21,7 @@ public:
     SortBase(int *a, int size);
     virtual ~SortBase();
 
+    void copyArray(int* a, int size);
     virtual void sort() = 0;
     virtual void sortWithComparison() = 0;
     int *getArray() const;

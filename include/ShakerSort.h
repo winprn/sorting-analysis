@@ -1,11 +1,10 @@
 #ifndef SHAKER_SORT
 #define SHAKER_SORT
-#include "SortBase.h"
+#include "SortStrategy.h"
 
-class ShakerSort : public SortBase
-{
+class ShakerSort : public SortStrategy {
 public:
-    ShakerSort(int *a, int n) : SortBase(a, n) {}
+    ShakerSort(int *a, int n) : SortStrategy(a, n) {}
     void sort();
     void sortWithComparison();
 };

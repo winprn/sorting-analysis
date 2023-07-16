@@ -1,25 +1,25 @@
-#include "SortBase.h"
+#include "SortStrategy.h"
 
-SortBase::SortBase() {
+SortStrategy::SortStrategy() {
     m_array = nullptr;
     m_count_comparison = m_size = 0;
 }
 
-SortBase::SortBase(int *a, int size) {
+SortStrategy::SortStrategy(int *a, int size) {
     m_size = size;
     m_array = new int[m_size];
     for (int i = 0; i < m_size; i++) m_array[i] = a[i];
 }
 
-int *SortBase::getArray() const {
+int *SortStrategy::getArray() const {
     return m_array;
 }
 
-int SortBase::getComparison() const {
+int SortStrategy::getComparison() const {
     return m_count_comparison;
 }
 
-SortBase::~SortBase()
+SortStrategy::~SortStrategy()
 {
     if (m_array != nullptr)
     {
@@ -28,13 +28,13 @@ SortBase::~SortBase()
     m_count_comparison = m_size = 0;
 }
 
-double SortBase::getDuration() const{
+double SortStrategy::getDuration() const{
     std::chrono::duration<double> duration = m_timeEnd - m_timeStart;
     double seconds = duration.count();
     return seconds;
 }
 
-void SortBase::display()
+void SortStrategy::display()
 {
     for (int i = 0; i < m_size; i++)
     {

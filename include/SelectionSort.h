@@ -1,12 +1,11 @@
 #ifndef SELECTION_SORT
 #define SELECTION_SORT
 
-#include "SortBase.h"
+#include "SortStrategy.h"
 
-class SelectionSort : public SortBase
-{
+class SelectionSort : public SortStrategy {
     public:
-    SelectionSort(int *a, int n) : SortBase(a, n){}
+    SelectionSort(int *a, int n) : SortStrategy(a, n){}
     void sort();
     void sortWithComparison();
 };

@@ -37,7 +37,7 @@ void HeapSort::sort()
     m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
-void HeapSort::heapifyWithComparision(int i, int m_size)
+void HeapSort::heapifyWithComparison(int i, int m_size)
 {
     int maxPos = i;
     int L = 2 * i + 1;
@@ -53,21 +53,21 @@ void HeapSort::heapifyWithComparision(int i, int m_size)
     if (++m_count_comparison && maxPos != i)
     {
         std::swap(m_array[i], m_array[maxPos]);
-        heapifyWithComparision(maxPos, m_size);
+        heapifyWithComparison(maxPos, m_size);
     }
 }
 
-void HeapSort::sortWithComparision()
+void HeapSort::sortWithComparison()
 {
     // build max heap
     for (int i = m_size / 2 - 1; i >= 0; --i)
-        heapifyWithComparision(i, m_size);
+        heapifyWithComparison(i, m_size);
 
     // heap sort  
     for (int i = m_size - 1; i >= 0; --i)
     {
         std::swap(m_array[0], m_array[i]);
-        heapifyWithComparision(0, i);
+        heapifyWithComparison(0, i);
     }
 
 }

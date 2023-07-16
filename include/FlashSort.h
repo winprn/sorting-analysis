@@ -1,12 +1,12 @@
-#include "SortBase.h"
+#include "SortStrategy.h"
 
 #ifndef FLASH_SORT
 #define FLASH_SORT
 
-class FlashSort : public SortBase {
+class FlashSort : public SortStrategy {
 public:
-    FlashSort(): SortBase(){}
-    FlashSort(int* a, int n): SortBase(a, n){}
+    FlashSort(): SortStrategy(){}
+    FlashSort(int* a, int n): SortStrategy(a, n){}
 
     void sort();
     void sortWithComparison();

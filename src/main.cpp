@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <time.h>
+#include "CommandLine.h"
 #include "../include/InsertionSort.h"
 #include "../include/MergeSort.h"
 #include "../external/doctest.h"
@@ -18,15 +19,18 @@ int main(int argc, char *argv[])
                 if (isdigit(argv[3][strlen(argv[3]) - 1]))
                 {
                     cout << "Command 3\n";
+                    CommandLine3(argc, argv);
                 }
                 else
                 {
                     cout << "Command 1\n";
+                    CommandLine1(argc, argv);
                 }
             }
             else if (argc == 6)
             {
                 cout << "Command 2\n";
+                CommandLine2(argc, argv);
             }
         }
         else if (strcmp(argv[1], "-c") == 0)
@@ -34,10 +38,12 @@ int main(int argc, char *argv[])
             if (argc == 5)
             {
                 cout << "Command 4\n";
+                CommandLine4(argc, argv);
             }
             else if (argc == 6)
             {
                 cout << "Command 5\n";
+                CommandLine5(argc, argv);
             }
         }
     } else {

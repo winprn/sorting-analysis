@@ -14,7 +14,7 @@ public:
     MergeSort(): SortBase(){}
     MergeSort(int* a, int n) : SortBase(a, n) {}
 
-    void sort();
+    void sort() override;
     
     void sortWithComparison();
 };

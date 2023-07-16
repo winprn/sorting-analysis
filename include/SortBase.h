@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <chrono>
 #include <iostream>
+#include <fstream>
 
 class SortBase {
 protected:
@@ -14,16 +15,22 @@ protected:
     std::chrono::high_resolution_clock::time_point m_timeStart;
     std::chrono::high_resolution_clock::time_point m_timeEnd;
     int m_count_comparison = 0, m_size;
+    
 public:
     SortBase();
     SortBase(int *a, int size);
-    ~SortBase();
+    virtual ~SortBase();
 
-    void sort();
-    void sortWithComparison();
+    virtual void sort() = 0;
+    virtual void sortWithComparison() = 0;
     int *getArray() const;
     int getComparison() const;
+    int getSize() const;
+    void readFromFile(char* FileName);
   
+    void startTimer();
+    void stopTimer();
+
     // return runtime in seconds
     double getDuration() const;
     void display();

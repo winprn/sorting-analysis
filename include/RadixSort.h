@@ -12,7 +12,7 @@ private:
 public:
     RadixSort(): SortBase() {}
     RadixSort(int* a, int n): SortBase(a, n) {}
-    void sort();
+    void sort() override;
     void sortWithComparison();
 };
 

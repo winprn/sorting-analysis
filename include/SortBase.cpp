@@ -19,6 +19,11 @@ int SortBase::getComparison() const {
     return m_count_comparison;
 }
 
+int SortBase::getSize() const {
+    return m_size;
+}
+
+
 SortBase::~SortBase()
 {
     if (m_array != nullptr)
@@ -34,10 +39,32 @@ double SortBase::getDuration() const{
     return seconds;
 }
 
+void SortBase::startTimer() {
+    m_timeStart = std::chrono::high_resolution_clock::now();
+}
+
+void SortBase::stopTimer() {
+    m_timeEnd = std::chrono::high_resolution_clock::now();
+}
+
 void SortBase::display()
 {
     for (int i = 0; i < m_size; i++)
     {
         std::cout << m_array[i] << " ";
     } std::cout << "\n";
+}
+
+void SortBase::readFromFile(char* FileName)
+{
+    std::ifstream ifs(FileName);
+    ifs >> m_size;
+    if (m_array != nullptr) 
+        delete[] m_array;
+    m_array = new int[m_size];
+    for (int i = 0; i < m_size; i++)
+    {
+        ifs >> m_array[i];
+    }
+    ifs.close();
 }

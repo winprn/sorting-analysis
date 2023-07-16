@@ -6,7 +6,8 @@
 class SelectionSort : public SortBase
 {
     public:
-    void sort(int *a, int n);
-    void sortWithComparison(int *a, int n);
+    SelectionSort(int *a, int n) : SortBase(a, n){}
+    void sort();
+    void sortWithComparison();
 };
 #endif

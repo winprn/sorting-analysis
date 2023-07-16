@@ -26,6 +26,7 @@ public:
   
     // return runtime in seconds
     double getDuration() const;
+
     void display();
 };
 

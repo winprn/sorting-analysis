@@ -27,7 +27,7 @@ public:
     // return runtime in seconds
     double getDuration() const;
 
-    void printArr();
+    void display();
 };
 
 #endif //SORTING_ANALYSIS_SORTBASE_H

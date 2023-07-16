@@ -6,11 +6,19 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(include)
 
 add_executable(sorting_analysis
+        src/DataGenerator.h
+        src/DataGenerator.cpp
+        src/main.cpp
         include/BubbleSort.h
+        include/BubbleSort.cpp
         include/FlashSort.h
+        include/FlashSort.cpp
         include/InsertionSort.h
+        include/InsertionSort.cpp
         include/MergeSort.h
+        include/MergeSort.cpp
         include/RadixSort.h
+        include/RadixSort.cpp
         include/SelectionSort.h
         include/SelectionSort.cpp
         include/HeapSort.h
@@ -18,5 +26,6 @@ add_executable(sorting_analysis
         include/ShakerSort.h
         include/ShakerSort.cpp
         include/SortBase.h
-        src/DataGenerator.cpp
-        src/main.cpp include/SortBase.cpp include/BubbleSort.cpp tests/test.h external/doctest.h tests/test.cpp src/DataGenerator.h)
+        include/SortBase.cpp 
+        tests/test.h external/doctest.h tests/test.cpp
+        )

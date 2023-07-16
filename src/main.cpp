@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string.h>
 #include <time.h>
+#include "../include/InsertionSort.h"
+#include "../include/MergeSort.h"
 #include "../external/doctest.h"
 
 using namespace std;

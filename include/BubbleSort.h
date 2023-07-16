@@ -1,7 +1,6 @@
-#include "SortBase.h"
-
 #ifndef SORTING_ANALYSIS_BUBBLESORT_H
 #define SORTING_ANALYSIS_BUBBLESORT_H
+#include "SortBase.h"
 
 class BubbleSort: public SortBase {
 public:

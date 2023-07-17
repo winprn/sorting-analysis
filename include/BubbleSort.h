@@ -1,13 +1,13 @@
 #ifndef SORTING_ANALYSIS_BUBBLESORT_H
 #define SORTING_ANALYSIS_BUBBLESORT_H
-#include "SortBase.h"
+#include "SortStrategy.h"
 
-class BubbleSort: public SortBase {
+class BubbleSort: public SortStrategy {
 public:
-    BubbleSort(): SortBase(){}
-    BubbleSort(int *a, int n): SortBase(a, n){}
-    void sort();
-    void sortWithComparison();
+    BubbleSort(): SortStrategy(){}
+    BubbleSort(int *a, int n): SortStrategy(a, n){}
+    void sort() override;
+    void sortWithComparison() override;
 };
 
 #endif //SORTING_ANALYSIS_BUBBLESORT_H

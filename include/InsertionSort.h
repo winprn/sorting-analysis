@@ -1,12 +1,12 @@
-#include "SortBase.h"
+#include "SortStrategy.h"
 
 #ifndef INSERTION_SORT
 #define INSERTION_SORT
 
-class InsertionSort : public SortBase {
+class InsertionSort : public SortStrategy {
 public:
-    InsertionSort(): SortBase(){}
-    InsertionSort(int* a, int n) : SortBase(a, n) {}
+    InsertionSort(): SortStrategy(){}
+    InsertionSort(int* a, int n) : SortStrategy(a, n) {}
     void sort();
     void sortWithComparison();
 };

@@ -2,25 +2,25 @@
 // Created by Ly Dinh Minh Man on 12/07/2023.
 //
 
-#ifndef SORTING_ANALYSIS_SORTBASE_H
-#define SORTING_ANALYSIS_SORTBASE_H
+#ifndef SORTING_ANALYSIS_SORTSTRATEGY_H
+#define SORTING_ANALYSIS_SORTSTRATEGY_H
 #include <algorithm>
 #include <chrono>
 #include <iostream>
 
-class SortBase {
+class SortStrategy {
 protected:
     int *m_array;
     std::chrono::high_resolution_clock::time_point m_timeStart;
     std::chrono::high_resolution_clock::time_point m_timeEnd;
     int m_count_comparison = 0, m_size;
 public:
-    SortBase();
-    SortBase(int *a, int size);
-    ~SortBase();
+  SortStrategy();
+  SortStrategy(int *a, int size);
+    ~SortStrategy();
 
-    void sort();
-    void sortWithComparison();
+    virtual void sort() = 0;
+    virtual void sortWithComparison() = 0;
     int *getArray() const;
     int getComparison() const;
   
@@ -30,4 +30,4 @@ public:
     void display();
 };
 
-#endif //SORTING_ANALYSIS_SORTBASE_H
+#endif // SORTING_ANALYSIS_SORTSTRATEGY_H

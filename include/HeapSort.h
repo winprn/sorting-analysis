@@ -1,16 +1,15 @@
 #ifndef HEAP_SORT
-#define HEAD_SORT  
-#include "SortBase.h"
+#define HEAP_SORT
+#include "SortStrategy.h"
 
-class HeapSort : public SortBase
-{
+class HeapSort : public SortStrategy {
     public:
-    HeapSort(int *a, int n) : SortBase(a, n){}
+    HeapSort(int *a, int n) : SortStrategy(a, n){}
 
     void heapify(int i, int m_size);
-    void sort();
-    void sortWithComparision();
-    void heapifyWithComparision(int i, int m_size);
+    void sort() override;
+    void sortWithComparison() override;
+    void heapifyWithComparison(int i, int m_size);
 };
 
 #endif

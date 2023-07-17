@@ -1,13 +1,13 @@
-#include "SortStrategy.h"
+#ifndef SORTING_ANALYSIS_INSERTIONSORT_H
+#define SORTING_ANALYSIS_INSERTIONSORT_H
 
-#ifndef INSERTION_SORT
-#define INSERTION_SORT
+#include "SortStrategy.h"
 
 class InsertionSort : public SortStrategy {
 public:
     InsertionSort(): SortStrategy(){}
     InsertionSort(int* a, int n) : SortStrategy(a, n) {}
-    void sort();
+    void sort() override;
     void sortWithComparison();
 };
 

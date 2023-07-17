@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <chrono>
 #include <iostream>
+#include <fstream>
 
 class SortStrategy {
 protected:
@@ -23,9 +24,14 @@ public:
     virtual void sortWithComparison() = 0;
     int *getArray() const;
     int getComparison() const;
+    int getSize() const;
+  
+    void readFromFile(char* FileName);
   
     // return runtime in seconds
     double getDuration() const;
+    void startTimer();
+    void stopTimer();
 
     void display();
 };

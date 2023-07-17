@@ -19,6 +19,10 @@ int SortStrategy::getComparison() const {
     return m_count_comparison;
 }
 
+int SortStrategy::getSize() const {
+    return m_size;
+}
+
 SortStrategy::~SortStrategy()
 {
     if (m_array != nullptr)
@@ -41,4 +45,26 @@ void SortStrategy::display()
         std::cout << m_array[i] << " ";
     } 
     std::cout << "\n";
+}
+
+void SortStrategy::startTimer() {
+    m_timeStart = std::chrono::high_resolution_clock::now();
+}
+
+void SortStrategy::stopTimer() {
+    m_timeEnd = std::chrono::high_resolution_clock::now();
+}
+
+void SortStrategy::readFromFile(char* FileName)
+{
+    std::ifstream ifs(FileName);
+    ifs >> m_size;
+    if (m_array != nullptr) 
+        delete[] m_array;
+    m_array = new int[m_size];
+    for (int i = 0; i < m_size; i++)
+    {
+        ifs >> m_array[i];
+    }
+    ifs.close();
 }

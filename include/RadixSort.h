@@ -1,7 +1,7 @@
-#include "SortStrategy.h"
+#ifndef SORTING_ANALYSIS_RADIXSORT_H
+#define SORTING_ANALYSIS_RADIXSORT_H
 
-#ifndef RADIX_SORT
-#define RADIX_SORT
+#include "SortStrategy.h"
 
 class RadixSort : public SortStrategy {
 private:
@@ -12,7 +12,7 @@ private:
 public:
     RadixSort(): SortStrategy() {}
     RadixSort(int* a, int n): SortStrategy(a, n) {}
-    void sort();
+    void sort() override;
     void sortWithComparison();
 };
 

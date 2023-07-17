@@ -2,7 +2,7 @@
 #include "../include/RadixSort.h"
 #include "../include/SortContext.h"
 #include "../src/DataGenerator.h"
-#include "BubbleSort.h"
+#include "../include/BubbleSort.h"
 
 TEST_CASE("random data") {
     int n = 50000;

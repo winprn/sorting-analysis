@@ -11,7 +11,7 @@
 #include "ShakerSort.h"
 #include "common.h"
 
-class SortContext {
+class SortContext : public SortStrategy {
 private:
   SortStrategy *strategy;
 public:

@@ -26,8 +26,6 @@ public:
     int getComparison() const;
     int getSize() const;
   
-    void readFromFile(char* FileName);
-  
     // return runtime in seconds
     double getDuration() const;
     void startTimer();

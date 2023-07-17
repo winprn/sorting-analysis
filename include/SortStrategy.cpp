@@ -54,17 +54,3 @@ void SortStrategy::startTimer() {
 void SortStrategy::stopTimer() {
     m_timeEnd = std::chrono::high_resolution_clock::now();
 }
-
-void SortStrategy::readFromFile(char* FileName)
-{
-    std::ifstream ifs(FileName);
-    ifs >> m_size;
-    if (m_array != nullptr) 
-        delete[] m_array;
-    m_array = new int[m_size];
-    for (int i = 0; i < m_size; i++)
-    {
-        ifs >> m_array[i];
-    }
-    ifs.close();
-}

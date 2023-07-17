@@ -1,18 +1,25 @@
 name: build
-on: [push, pull_request]
+concurrency:
+  group: build-iso
+  cancel-in-progress: true
+
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   run:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Install deps
         run: sudo apt install cmake && sudo apt install clang-format && sudo apt install clang-tidy
       - name: Run CMake
-        run: cmake -S. -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+        run: cmake -S. -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1
       - name: Run clang-tidy
         run: clang-tidy src/* -p build/
       - name: Run clang-format
         run: clang-format --dry-run --Werror src/*
       - name: Run Make
-        run: make -Cbuild
+        run: make -C build

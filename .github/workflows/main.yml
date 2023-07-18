@@ -21,10 +21,9 @@ jobs:
           style: chromium
       - uses: EndBug/add-and-commit@v9
         with:
-          new_branch: 'formatted-code'
+          new_branch: 'format-code'
           author_name: Clang Robot
           author_email: robot@example.com
           message: 'Committing clang-format changes'
-          add: 'include/*.cpp'
         env:
-          GITHUB_TOKEN: ${{ secrets.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

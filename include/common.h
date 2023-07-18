@@ -15,4 +15,4 @@ enum class SortingAlgorithm {
   FlashSort
 };
 
-#endif // SORTING_ANALYSIS_COMMON_H
+#endif  // SORTING_ANALYSIS_COMMON_H

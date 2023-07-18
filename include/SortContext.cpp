@@ -1,6 +1,6 @@
 #include "SortContext.h"
 
-void SortContext::setStrategy(SortingAlgorithm algo, int *a, int n) {
+void SortContext::setStrategy(SortingAlgorithm algo, int* a, int n) {
   switch (algo) {
     case SortingAlgorithm::BubbleSort:
       strategy = new BubbleSort(a, n);

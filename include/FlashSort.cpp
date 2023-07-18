@@ -1,11 +1,5 @@
 #include "FlashSort.h"
 
-void FlashSort::sort()
-{
+void FlashSort::sort() {}
 
-}
-
-void FlashSort::sortWithComparison()
-{
-
-}
+void FlashSort::sortWithComparison() {}

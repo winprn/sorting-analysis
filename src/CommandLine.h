@@ -3,6 +3,7 @@
 #include "string.h"
 #include "../include/SortContext.h"
 #include "DataGenerator.h"
+#include "common.h"
 
 using namespace std;
 
@@ -11,6 +12,6 @@ void CommandLine2(int argc, char* argv[]);
 void CommandLine3(int argc, char* argv[]);
 void CommandLine4(int argc, char* argv[]);
 void CommandLine5(int argc, char* argv[]);
-// SortStrategy* getSortingObject(char* algorithmName);
+SortingAlgorithm convertStringToEnum(char* algorithmName);
 
 #endif

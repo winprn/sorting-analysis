@@ -24,6 +24,15 @@ public:
   void sortWithComparison() {
     strategy->sortWithComparison();
   }
+  void display() {
+    strategy->display();
+  }
+  int getComparison() {
+    return strategy->getComparison();
+  }
+  SortStrategy* getStrategy() {
+    return strategy;
+  }
 };
 
 #endif // SORTING_ANALYSIS_SORTCONTEXT_H

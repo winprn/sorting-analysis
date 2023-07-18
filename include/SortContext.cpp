@@ -1,7 +1,10 @@
 #include "SortContext.h"
 
 void SortContext::setStrategy(SortingAlgorithm algo, int *a, int n) {
-  if (strategy) delete strategy;
+  if (strategy){
+    delete strategy;
+    strategy = nullptr;
+  } 
   switch (algo) {
     case SortingAlgorithm::BubbleSort:
       strategy = new BubbleSort(a, n);

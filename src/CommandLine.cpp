@@ -3,7 +3,9 @@
 
 void readFromFile(int *m_array, int &m_size, char *fileName)
 {
-    std::ifstream ifs(fileName);
+    std::ifstream ifs;
+    std::string fileNameStr(fileName);
+    ifs.open(fileNameStr);
     if (!ifs.is_open())
     {
         cerr << "Cannot Open File\n";
@@ -20,25 +22,71 @@ void readFromFile(int *m_array, int &m_size, char *fileName)
     ifs.close();
 }
 
+SortingAlgorithm convertStringToEnum(char* algorithmName)
+{
+    // cout << algorithmName << endl;
+    if (strcmp(algorithmName, "bubble-sort") == 0) {
+        // cout << 1 << endl;
+        return SortingAlgorithm::BubbleSort;
+    }
+    else if (strcmp(algorithmName, "radix-sort") == 0) {
+        return SortingAlgorithm::RadixSort;
+    }
+    else if (strcmp(algorithmName, "merge-sort") == 0) {
+        return SortingAlgorithm::MergeSort;
+    }
+    else if (strcmp(algorithmName, "flash-sort") == 0) {
+        return SortingAlgorithm::FlashSort;
+    }
+    else if (strcmp(algorithmName, "bubble-sort") == 0) {
+        return SortingAlgorithm::BubbleSort;
+    }
+    else if (strcmp(algorithmName, "insertion-sort") == 0) {
+        return SortingAlgorithm::InsertionSort;
+    }
+    else if (strcmp(algorithmName, "selection-sort") == 0) {
+        return SortingAlgorithm::SelectionSort;
+    }
+    else if (strcmp(algorithmName, "shell-sort") == 0) {
+        return SortingAlgorithm::ShellSort;
+    }
+    else if (strcmp(algorithmName, "shaker-sort") == 0) {
+        return SortingAlgorithm::ShakerSort;
+    }
+    else if (strcmp(algorithmName, "heap-sort") == 0) {
+        return SortingAlgorithm::HeapSort;
+    }
+    else if (strcmp(algorithmName, "counting-sort") == 0) {
+        return SortingAlgorithm::CountingSort;
+    }
+    return SortingAlgorithm::QuickSort;
+}
+
 void CommandLine1(int argc, char *argv[])
 {
     int *array = nullptr, size = 0;
+    std::cout << argv[3] << std::endl;
     readFromFile(array, size, argv[3]);
 
     SortContext sortingObject;
     sortingObject.setStrategy(convertStringToEnum(argv[2]), array, size);
-    if (sortingObject.getArray() == nullptr)
-    {
-        cerr << "Invalid algorithm!\n";
-        return;
-    }
+    // if (sortingObject.getArray() == nullptr)
+    // {
+    //     cerr << "Invalid algorithm!\n";
+    //     return;
+    // }
+    cout << "Display\n";
+    sortingObject.display();
     sortingObject.startTimer();
     sortingObject.sort();
     sortingObject.stopTimer();
+    sortingObject.display();
 
     SortContext compareObject;
     compareObject.setStrategy(convertStringToEnum(argv[2]), array, size);
     compareObject.sortWithComparison();
+    cout << "Display\n";
+    compareObject.display();
 
     // display
     std::cout << "ALGORITHM MODE\n";
@@ -76,7 +124,7 @@ void CommandLine2(int argc, char *argv[])
 
     SortContext sortingObject;
     sortingObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
-    if (sortingObject.getArray() == nullptr)
+    if (sortingObject.getStrategy() == nullptr)
     {
         cerr << "Invalid algorithm!\n";
         return;
@@ -109,7 +157,7 @@ void CommandLine3(int argc, char *argv[])
 {
     int array_size = std::atoi(argv[3]);
     int *array = new int[array_size];
-    char *Orders[] = {"Randomize", "Sorted", "Reversed", "Nearly Sorted"};
+    std::string Orders[] = {"Randomize", "Sorted", "Reversed", "Nearly Sorted"};
 
     std::cout << "ALGORITHM MODE\n";
     std::cout << "ALGORITHM: " << argv[2] << "\n";

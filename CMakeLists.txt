@@ -27,8 +27,6 @@ add_executable(sorting_analysis
         include/ShakerSort.cpp
         include/SortStrategy.h
         include/SortStrategy.cpp
-        include/SortBase.h
-        include/SortBase.cpp 
         tests/test.h external/doctest.h tests/test.cpp
         src/CommandLine.h
         src/CommandLine.cpp

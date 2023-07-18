@@ -40,6 +40,11 @@ double SortStrategy::getDuration() const{
 
 void SortStrategy::display()
 {
+    if (m_array == nullptr || m_size == 0)
+    {
+        std::cout << "cannot display empty array\n";
+        return;
+    }
     for (int i = 0; i < m_size; i++)
     {
         std::cout << m_array[i] << " ";

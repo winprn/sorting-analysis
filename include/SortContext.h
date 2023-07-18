@@ -33,6 +33,9 @@ public:
   SortStrategy* getStrategy() {
     return strategy;
   }
+  double getDuration() {
+    return strategy->getDuration();
+  }
 };
 
 #endif // SORTING_ANALYSIS_SORTCONTEXT_H

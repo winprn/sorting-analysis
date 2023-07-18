@@ -1,7 +1,7 @@
 #include "CommandLine.h"
 #include "iomanip"
 
-void readFromFile(int *m_array, int &m_size, char *fileName)
+void readFromFile(int *&m_array, int &m_size, char *fileName)
 {
     std::ifstream ifs;
     std::string fileNameStr(fileName);
@@ -65,37 +65,32 @@ SortingAlgorithm convertStringToEnum(char* algorithmName)
 void CommandLine1(int argc, char *argv[])
 {
     int *array = nullptr, size = 0;
-    std::cout << argv[3] << std::endl;
     readFromFile(array, size, argv[3]);
 
     SortContext sortingObject;
     sortingObject.setStrategy(convertStringToEnum(argv[2]), array, size);
-    // if (sortingObject.getArray() == nullptr)
-    // {
-    //     cerr << "Invalid algorithm!\n";
-    //     return;
-    // }
-    cout << "Display\n";
-    sortingObject.display();
+    if (sortingObject.getStrategy() == nullptr)
+    {
+        cerr << "Invalid algorithm!\n";
+        return;
+    }
+
     sortingObject.startTimer();
     sortingObject.sort();
     sortingObject.stopTimer();
-    sortingObject.display();
 
     SortContext compareObject;
     compareObject.setStrategy(convertStringToEnum(argv[2]), array, size);
     compareObject.sortWithComparison();
-    cout << "Display\n";
-    compareObject.display();
 
     // display
     std::cout << "ALGORITHM MODE\n";
     std::cout << "ALGORITHM: " << argv[2] << "\n";
     std::cout << "Input file: " << argv[3] << "\n";
-    std::cout << "Input size: " << sortingObject.getSize() << "\n";
+    std::cout << "Input size: " << size << "\n";
     std::cout << "-------------------------\n";
     if (strcmp(argv[4], "-time") == 0 || strcmp(argv[4], "-both") == 0)
-        std::cout << "Running Time: " << fixed << setprecision(5) << sortingObject.getDuration() << " seconds\n";
+        std::cout << "Running Time: " << sortingObject.getDuration() << " seconds\n";
     if (strcmp(argv[4], "-comp") == 0 || strcmp(argv[4], "-both") == 0)
         std::cout << "Comparisions: " << compareObject.getComparison() << "\n";
     delete[] array;
@@ -173,7 +168,7 @@ void CommandLine3(int argc, char *argv[])
         sortingObject.sort();
         sortingObject.stopTimer();
 
-        if (sortingObject.getArray() == nullptr)
+        if (sortingObject.getStrategy() == nullptr)
         {
             cerr << "Invalid algorithm!\n";
             break;

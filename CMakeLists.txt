@@ -9,8 +9,11 @@ add_executable(sorting_analysis
                src/DataGenerator.h
                src/DataGenerator.cpp
                src/main.cpp
+               include/common.h
                include/BubbleSort.h
                include/BubbleSort.cpp
+               include/CountingSort.h
+               include/CountingSort.cpp
                include/FlashSort.h
                include/FlashSort.cpp
                include/InsertionSort.h
@@ -25,7 +28,10 @@ add_executable(sorting_analysis
                include/HeapSort.cpp
                include/ShakerSort.h
                include/ShakerSort.cpp
+               include/ShellSort.h
+               include/ShellSort.cpp
+               include/SortContext.h
+               include/SortContext.cpp
                include/SortStrategy.h
                include/SortStrategy.cpp
-               tests/test.h external/doctest.h tests/test.cpp
-               include/SortContext.h include/SortContext.cpp include/common.h include/ShellSort.h include/ShellSort.cpp)
+               tests/test.h external/doctest.h tests/test.cpp)

@@ -31,6 +31,16 @@ public:
     void startTimer();
     void stopTimer();
 
+    void writeToFile(std::string FileName)
+    {
+      std::ofstream ofs(FileName);
+      ofs << m_size << "\n";
+      for (int i = 0; i <m_size; i++)
+      {
+        ofs << m_array[i] << " ";
+      } ofs << "\n";
+    }
+
     void display();
 };
 

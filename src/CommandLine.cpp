@@ -1,19 +1,16 @@
 #include "CommandLine.h"
 #include "iomanip"
 
-void readFromFile(int *&m_array, int &m_size, char *fileName)
+void readFromFile(int*& m_array, int& m_size, const char* fileName)
 {
-    std::ifstream ifs;
-    std::string fileNameStr(fileName);
-    ifs.open(fileNameStr);
+    ifstream ifs(fileName);
     if (!ifs.is_open())
     {
         cerr << "Cannot Open File\n";
         return;
     }
     ifs >> m_size;
-    if (m_array != nullptr)
-        delete[] m_array;
+    delete[] m_array;
     m_array = new int[m_size];
     for (int i = 0; i < m_size; i++)
     {
@@ -74,14 +71,15 @@ void CommandLine1(int argc, char *argv[])
         cerr << "Invalid algorithm!\n";
         return;
     }
-
-    sortingObject.startTimer();
     sortingObject.sort();
-    sortingObject.stopTimer();
 
     SortContext compareObject;
     compareObject.setStrategy(convertStringToEnum(argv[2]), array, size);
     compareObject.sortWithComparison();
+
+    cout << 1 << endl;
+    // write to "output.txt"
+    sortingObject.writeToFile("output.txt");
 
     // display
     std::cout << "ALGORITHM MODE\n";
@@ -124,14 +122,15 @@ void CommandLine2(int argc, char *argv[])
         cerr << "Invalid algorithm!\n";
         return;
     }
-    sortingObject.startTimer();
     sortingObject.sort();
-    sortingObject.stopTimer();
+
+    // write to "output.txt"
+    sortingObject.writeToFile("ouput.txt");
 
     SortContext compareObject;
     compareObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
     compareObject.sortWithComparison();
-
+    
     // display
     std::cout << "ALGORITHM MODE\n";
     std::cout << "ALGORITHM: " << argv[2] << "\n";
@@ -158,21 +157,28 @@ void CommandLine3(int argc, char *argv[])
     std::cout << "ALGORITHM: " << argv[2] << "\n";
     std::cout << "Input size: " << argv[3] << "\n";
 
+    int num[] = {1, 3, 4, 2};
+
     for (int i = 0; i < 4; i++)
     {
         GenerateData(array, array_size, i);
 
+        ofstream ofs("input_" + to_string(num[i]) + ".txt");
+        ofs << array_size << "\n";
+        for (int i = 0; i < array_size; i++)
+        {
+            ofs << array[i] << " ";
+        }
+        ofs.close();
+
         SortContext sortingObject;
         sortingObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
-        sortingObject.startTimer();
-        sortingObject.sort();
-        sortingObject.stopTimer();
-
         if (sortingObject.getStrategy() == nullptr)
         {
             cerr << "Invalid algorithm!\n";
             break;
         }
+        sortingObject.sort();
 
         SortContext compareObject;
         compareObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);

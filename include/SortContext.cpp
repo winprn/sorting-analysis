@@ -41,3 +41,11 @@ void SortContext::setStrategy(SortingAlgorithm algo, int *a, int n) {
       break;
   }
 }
+
+SortContext::~SortContext()
+{
+    if (strategy)
+    {
+      delete strategy;
+    }
+}

@@ -17,9 +17,12 @@ private:
 public:
   SortContext(): strategy(nullptr){}
   SortContext(SortStrategy *strat_): strategy(strat_){}
+  ~SortContext();
   void setStrategy(SortingAlgorithm algo, int *a, int n);
   void sort() {
+    strategy->startTimer();
     strategy->sort();
+    strategy->stopTimer();
   }
   void sortWithComparison() {
     strategy->sortWithComparison();
@@ -35,6 +38,9 @@ public:
   }
   double getDuration() {
     return strategy->getDuration();
+  }
+  void writeToFile(std::string FileName) {
+    strategy->writeToFile(FileName);
   }
 };
 

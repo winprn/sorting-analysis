@@ -24,5 +24,6 @@ jobs:
           author_name: Clang Robot
           author_email: robot@example.com
           message: 'Committing clang-format changes'
+          add: '.h,.cpp'
         env:
           GITHUB_TOKEN: ${{ secrets.token }}

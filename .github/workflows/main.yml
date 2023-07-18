@@ -1,25 +1,29 @@
-name: build
+name: Run clang-format Linter
 concurrency:
   group: build-iso
   cancel-in-progress: true
 
-on:
-  pull_request:
-    branches:
-      - *
+on: [push]
 
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - name: Install deps
-        run: sudo apt install cmake && sudo apt install clang-format && sudo apt install clang-tidy
-      - name: Run CMake
-        run: cmake -S. -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1
-      - name: Run clang-tidy
-        run: clang-tidy src/* -p build/
-      - name: Run clang-format
-        run: clang-format --dry-run --Werror src/*
-      - name: Run Make
-        run: make -C build
+      - uses: DoozyX/clang-format-lint-action@v0.16.2
+        with:
+          source: '.'
+          exclude: './src/DataGenerator.cpp'
+          extensions: 'h,cpp'
+          clangFormatVersion: 16
+          inplace: True
+          style: chromium
+      - uses: EndBug/add-and-commit@v9
+        with:
+          new_branch: 'format-code'
+          author_name: Clang Robot
+          author_email: robot@example.com
+          message: 'Committing clang-format changes'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

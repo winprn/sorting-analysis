@@ -4,11 +4,11 @@
 #include "SortStrategy.h"
 
 class InsertionSort : public SortStrategy {
-public:
-    InsertionSort(): SortStrategy(){}
-    InsertionSort(int* a, int n) : SortStrategy(a, n) {}
-    void sort() override;
-    void sortWithComparison();
+ public:
+  InsertionSort() : SortStrategy() {}
+  InsertionSort(int* a, int n) : SortStrategy(a, n) {}
+  void sort() override;
+  void sortWithComparison();
 };
 
 #endif

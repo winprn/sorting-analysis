@@ -6,8 +6,8 @@
 #define SORTING_ANALYSIS_SORTSTRATEGY_H
 #include <algorithm>
 #include <chrono>
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 class SortStrategy {
  protected:
@@ -21,18 +21,18 @@ class SortStrategy {
   SortStrategy(int* a, int size);
   ~SortStrategy();
 
-    virtual void sort() = 0;
-    virtual void sortWithComparison() = 0;
-    int *getArray() const;
-    int getComparison() const;
-    int getSize() const;
-  
-    // return runtime in seconds
-    double getDuration() const;
-    void startTimer();
-    void stopTimer();
+  virtual void sort() = 0;
+  virtual void sortWithComparison() = 0;
+  int* getArray() const;
+  int getComparison() const;
+  int getSize() const;
 
-    void writeToFile(std::string FileName);
+  // return runtime in seconds
+  double getDuration() const;
+  void startTimer();
+  void stopTimer();
+
+  void writeToFile(std::string FileName);
 
   void display();
 };

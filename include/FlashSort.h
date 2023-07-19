@@ -7,8 +7,8 @@ class FlashSort : public SortStrategy {
   FlashSort() : SortStrategy() {}
   FlashSort(int* a, int n) : SortStrategy(a, n) {}
 
-    void sort() override;
-    void sortWithComparison();
+  void sort() override;
+  void sortWithComparison();
 };
 
 #endif

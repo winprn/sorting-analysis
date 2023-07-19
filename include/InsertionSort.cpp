@@ -16,7 +16,6 @@ void InsertionSort::sort() {
   m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
-
 void InsertionSort::sortWithComparison() {
   int i, key, j;
   for (i = 1; ++m_count_comparison && i < m_size; i++) {

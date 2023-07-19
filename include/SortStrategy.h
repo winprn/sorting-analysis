@@ -9,25 +9,26 @@
 #include <iostream>
 
 class SortStrategy {
-protected:
-    int *m_array;
-    std::chrono::high_resolution_clock::time_point m_timeStart;
-    std::chrono::high_resolution_clock::time_point m_timeEnd;
-    int m_count_comparison = 0, m_size;
-public:
+ protected:
+  int* m_array;
+  std::chrono::high_resolution_clock::time_point m_timeStart;
+  std::chrono::high_resolution_clock::time_point m_timeEnd;
+  int m_count_comparison = 0, m_size;
+
+ public:
   SortStrategy();
-  SortStrategy(int *a, int size);
-    ~SortStrategy();
+  SortStrategy(int* a, int size);
+  ~SortStrategy();
 
-    virtual void sort() = 0;
-    virtual void sortWithComparison() = 0;
-    int *getArray() const;
-    int getComparison() const;
-  
-    // return runtime in seconds
-    double getDuration() const;
+  virtual void sort() = 0;
+  virtual void sortWithComparison() = 0;
+  int* getArray() const;
+  int getComparison() const;
 
-    void display();
+  // return runtime in seconds
+  double getDuration() const;
+
+  void display();
 };
 
-#endif // SORTING_ANALYSIS_SORTSTRATEGY_H
+#endif  // SORTING_ANALYSIS_SORTSTRATEGY_H

@@ -17,8 +17,9 @@ void ShellSort::sortWithComparison() {
   for (int g : gaps) {
     for (int i = g; ++m_count_comparison && i < m_size; i++) {
       int tmp = m_array[i], j = i;
-      for (; ++m_count_comparison && j >= g &&
-             ++m_count_comparison && m_array[j - g] > tmp; j -= g)
+      for (; ++m_count_comparison && j >= g && ++m_count_comparison &&
+             m_array[j - g] > tmp;
+           j -= g)
         m_array[j] = m_array[j - g];
 
       m_array[j] = tmp;

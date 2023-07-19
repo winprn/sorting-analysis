@@ -4,9 +4,9 @@
 #include "SortStrategy.h"
 
 class SelectionSort : public SortStrategy {
-    public:
-    SelectionSort(int *a, int n) : SortStrategy(a, n){}
-    void sort();
-    void sortWithComparison();
+ public:
+  SelectionSort(int* a, int n) : SortStrategy(a, n) {}
+  void sort();
+  void sortWithComparison();
 };
 #endif

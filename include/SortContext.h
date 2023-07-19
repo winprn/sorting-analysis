@@ -12,18 +12,15 @@
 #include "common.h"
 
 class SortContext {
-private:
-  SortStrategy *strategy;
-public:
-  SortContext(): strategy(nullptr){}
-  SortContext(SortStrategy *strat_): strategy(strat_){}
-  void setStrategy(SortingAlgorithm algo, int *a, int n);
-  void sort() {
-    strategy->sort();
-  }
-  void sortWithComparison() {
-    strategy->sortWithComparison();
-  }
+ private:
+  SortStrategy* strategy;
+
+ public:
+  SortContext() : strategy(nullptr) {}
+  SortContext(SortStrategy* strat_) : strategy(strat_) {}
+  void setStrategy(SortingAlgorithm algo, int* a, int n);
+  void sort() { strategy->sort(); }
+  void sortWithComparison() { strategy->sortWithComparison(); }
 };
 
-#endif // SORTING_ANALYSIS_SORTCONTEXT_H
+#endif  // SORTING_ANALYSIS_SORTCONTEXT_H

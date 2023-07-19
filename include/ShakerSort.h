@@ -3,9 +3,9 @@
 #include "SortStrategy.h"
 
 class ShakerSort : public SortStrategy {
-public:
-    ShakerSort(int *a, int n) : SortStrategy(a, n) {}
-    void sort();
-    void sortWithComparison();
+ public:
+  ShakerSort(int* a, int n) : SortStrategy(a, n) {}
+  void sort();
+  void sortWithComparison();
 };
 #endif

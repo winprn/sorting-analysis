@@ -10,15 +10,16 @@
 #include <fstream>
 
 class SortStrategy {
-protected:
-    int *m_array;
-    std::chrono::high_resolution_clock::time_point m_timeStart;
-    std::chrono::high_resolution_clock::time_point m_timeEnd;
-    int m_count_comparison = 0, m_size;
-public:
+ protected:
+  int* m_array;
+  std::chrono::high_resolution_clock::time_point m_timeStart;
+  std::chrono::high_resolution_clock::time_point m_timeEnd;
+  int m_count_comparison = 0, m_size;
+
+ public:
   SortStrategy();
-  SortStrategy(int *a, int size);
-    ~SortStrategy();
+  SortStrategy(int* a, int size);
+  ~SortStrategy();
 
     virtual void sort() = 0;
     virtual void sortWithComparison() = 0;
@@ -33,7 +34,7 @@ public:
 
     void writeToFile(std::string FileName);
 
-    void display();
+  void display();
 };
 
-#endif // SORTING_ANALYSIS_SORTSTRATEGY_H
+#endif  // SORTING_ANALYSIS_SORTSTRATEGY_H

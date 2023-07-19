@@ -42,4 +42,4 @@ public:
   }
 };
 
-#endif // SORTING_ANALYSIS_SORTCONTEXT_H
+#endif  // SORTING_ANALYSIS_SORTCONTEXT_H

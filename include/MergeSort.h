@@ -4,19 +4,14 @@
 #include "SortStrategy.h"
 
 class MergeSort : public SortStrategy {
-private:
-    void mergeSort(int left, int right);
-    void mergeTwoArrays(int left, int mid, int right);
+ private:
+  void mergeSort(int left, int right);
+  void mergeTwoArrays(int left, int mid, int right);
 
-    void mergeSortWithComparison(int left, int right);
-    void mergeTwoArraysWithComparison(int left, int mid, int right);
-public:
-    MergeSort(): SortStrategy(){}
-    MergeSort(int* a, int n) : SortStrategy(a, n) {}
-
-    void sort() override;
-    
-    void sortWithComparison();
+  void mergeSortWithComparison(int left, int right);
+  void mergeTwoArraysWithComparison(int left, int mid, int right);
+  void sort() override;    
+  void sortWithComparison();
 };
 
 #endif

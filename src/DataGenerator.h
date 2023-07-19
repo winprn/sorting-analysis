@@ -7,4 +7,4 @@ void GenerateReverseData(int a[], int n);
 void GenerateNearlySortedData(int a[], int n);
 void GenerateData(int a[], int n, int dataType);
 
-#endif //SORTING_ANALYSIS_DATAGENERATOR_H
+#endif  // SORTING_ANALYSIS_DATAGENERATOR_H

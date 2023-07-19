@@ -3,9 +3,9 @@
 #include "SortStrategy.h"
 
 class FlashSort : public SortStrategy {
-public:
-    FlashSort(): SortStrategy(){}
-    FlashSort(int* a, int n): SortStrategy(a, n){}
+ public:
+  FlashSort() : SortStrategy() {}
+  FlashSort(int* a, int n) : SortStrategy(a, n) {}
 
     void sort() override;
     void sortWithComparison();

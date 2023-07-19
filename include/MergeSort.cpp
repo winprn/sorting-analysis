@@ -66,7 +66,6 @@ void MergeSort::sort()
 {
     m_timeStart = std::chrono::high_resolution_clock::now();
     mergeSort(0, m_size - 1);
-    std::chrono::high_resolution_clock::now();
     m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 

@@ -24,7 +24,7 @@ void SortContext::setStrategy(SortingAlgorithm algo, int* a, int n) {
       strategy = new MergeSort(a, n);
       break;
     case SortingAlgorithm::QuickSort:
-//              strategy = new QuickSort(a, n);
+      //              strategy = new QuickSort(a, n);
       break;
     case SortingAlgorithm::RadixSort:
       strategy = new RadixSort(a, n);

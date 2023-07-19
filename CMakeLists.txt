@@ -8,6 +8,8 @@ include_directories(include)
 add_executable(sorting_analysis
                src/DataGenerator.h
                src/DataGenerator.cpp
+               src/CommandLine.h
+               src/CommandLine.cpp
                src/main.cpp
                include/common.h
                include/BubbleSort.h

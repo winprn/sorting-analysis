@@ -1,5 +1,5 @@
-#ifndef MERGE_SORT
-#define MERGE_SORT
+#ifndef SORTING_ANALYSIS_MERGESORT_H
+#define SORTING_ANALYSIS_MERGESORT_H
 
 #include "SortStrategy.h"
 
@@ -10,13 +10,7 @@ class MergeSort : public SortStrategy {
 
   void mergeSortWithComparison(int left, int right);
   void mergeTwoArraysWithComparison(int left, int mid, int right);
-
- public:
-  MergeSort() : SortStrategy() {}
-  MergeSort(int* a, int n) : SortStrategy(a, n) {}
-
-  void sort();
-
+  void sort() override;    
   void sortWithComparison();
 };
 

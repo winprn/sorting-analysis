@@ -51,7 +51,9 @@ void MergeSort::mergeTwoArrays(int left, int mid, int right) {
 }
 
 void MergeSort::sort() {
-  mergeSort(0, m_size - 1);
+    m_timeStart = std::chrono::high_resolution_clock::now();
+    mergeSort(0, m_size - 1);
+    m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
 void MergeSort::mergeSortWithComparison(int left, int right) {

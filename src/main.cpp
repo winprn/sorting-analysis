@@ -1,34 +1,52 @@
 #include <string.h>
 #include <time.h>
-#include <iostream>
+#include "CommandLine.h"
 #include "../external/doctest.h"
-#include "../include/InsertionSort.h"
-#include "../include/MergeSort.h"
 
 using namespace std;
 
-int main(int argc, char* argv[]) {
-  if (argc > 4) {
-    if (strcmp(argv[1], "-a") == 0) {
-      if (argc == 5) {
-        if (isdigit(argv[3][strlen(argv[3]) - 1])) {
-          cout << "Command 3\n";
-        } else {
-          cout << "Command 1\n";
-        }
-      } else if (argc == 6) {
-        cout << "Command 2\n";
-      }
-    } else if (strcmp(argv[1], "-c") == 0) {
-      if (argc == 5) {
-        cout << "Command 4\n";
-      } else if (argc == 6) {
-        cout << "Command 5\n";
-      }
-    }
-  } else {
-    doctest::Context context;
+const string algo = {};
 
+int main(int argc, char *argv[])
+{
+    if (argc > 4)
+    {
+        if (strcmp(argv[1], "-a") == 0)
+        {
+            if (argc == 5)
+            {
+                if (isdigit(argv[3][strlen(argv[3]) - 1]))
+                {
+                    cout << "Command 3\n";
+                    CommandLine3(argc, argv);
+                }
+                else
+                {
+                    cout << "Command 1\n";
+                    CommandLine1(argc, argv);
+                }
+            }
+            else if (argc == 6)
+            {
+                cout << "Command 2\n";
+                CommandLine2(argc, argv);
+            }
+        }
+        else if (strcmp(argv[1], "-c") == 0)
+        {
+            if (argc == 5)
+            {
+                cout << "Command 4\n";
+                CommandLine4(argc, argv);
+            }
+            else if (argc == 6)
+            {
+                cout << "Command 5\n";
+                CommandLine5(argc, argv);
+            }
+        }
+    } else {
+        doctest::Context context;
     // !!! THIS IS JUST AN EXAMPLE SHOWING HOW DEFAULTS/OVERRIDES ARE SET !!!
 
     // defaults

@@ -1,15 +1,14 @@
+#ifndef SORTING_ANALYSIS_FLASHSORT_H
+#define SORTING_ANALYSIS_FLASHSORT_H
 #include "SortStrategy.h"
-
-#ifndef FLASH_SORT
-#define FLASH_SORT
 
 class FlashSort : public SortStrategy {
  public:
   FlashSort() : SortStrategy() {}
   FlashSort(int* a, int n) : SortStrategy(a, n) {}
 
-  void sort();
-  void sortWithComparison();
+    void sort() override;
+    void sortWithComparison();
 };
 
 #endif

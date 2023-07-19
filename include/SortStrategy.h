@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <chrono>
 #include <iostream>
+#include <fstream>
 
 class SortStrategy {
  protected:
@@ -20,13 +21,18 @@ class SortStrategy {
   SortStrategy(int* a, int size);
   ~SortStrategy();
 
-  virtual void sort() = 0;
-  virtual void sortWithComparison() = 0;
-  int* getArray() const;
-  int getComparison() const;
+    virtual void sort() = 0;
+    virtual void sortWithComparison() = 0;
+    int *getArray() const;
+    int getComparison() const;
+    int getSize() const;
+  
+    // return runtime in seconds
+    double getDuration() const;
+    void startTimer();
+    void stopTimer();
 
-  // return runtime in seconds
-  double getDuration() const;
+    void writeToFile(std::string FileName);
 
   void display();
 };

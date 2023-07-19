@@ -1,6 +1,7 @@
 #include "CountingSort.h"
 
 void CountingSort::sort() {
+  m_timeStart = std::chrono::high_resolution_clock::now();
   memset(_cnt, 0, sizeof(_cnt));
   for (int i = 0; i < m_size; i++)
     _cnt[m_array[i]]++;
@@ -9,6 +10,7 @@ void CountingSort::sort() {
     for (; _cnt[i]; --_cnt[i], l++)
       m_array[l] = i;
   }
+  m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
 void CountingSort::sortWithComparison() {

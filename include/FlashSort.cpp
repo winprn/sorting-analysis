@@ -10,6 +10,7 @@ void swap(int& a, int& b)
 // Flash Sort algorithm
 void FlashSort::sort()
 {
+    m_timeStart = std::chrono::high_resolution_clock::now();
     int minVal = m_array[0];
     int max = 0;
     int m = int(0.45 * m_size);
@@ -79,6 +80,7 @@ void FlashSort::sort()
         // Place the key in its correct position
         m_array[j + 1] = key;
     }
+    m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
 void FlashSort::sortWithComparison()

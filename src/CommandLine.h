@@ -5,8 +5,6 @@
 #include "DataGenerator.h"
 #include "common.h"
 
-using namespace std;
-
 void CommandLine1(int argc, char* argv[]);
 void CommandLine2(int argc, char* argv[]);
 void CommandLine3(int argc, char* argv[]);

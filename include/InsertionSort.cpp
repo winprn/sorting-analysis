@@ -2,6 +2,7 @@
 
 void InsertionSort::sort()
 {
+    m_timeStart = std::chrono::high_resolution_clock::now();
     int i, key, j;
     for (i = 1; i < m_size; i++)
     {
@@ -15,6 +16,7 @@ void InsertionSort::sort()
         }
         m_array[j + 1] = key;
     }
+    m_timeEnd = std::chrono::high_resolution_clock::now();
 } 
 
 void InsertionSort::sortWithComparison()

@@ -20,9 +20,7 @@ public:
   ~SortContext();
   void setStrategy(SortingAlgorithm algo, int *a, int n);
   void sort() {
-    strategy->startTimer();
     strategy->sort();
-    strategy->stopTimer();
   }
   void sortWithComparison() {
     strategy->sortWithComparison();

@@ -3,10 +3,10 @@
 
 void readFromFile(int*& m_array, int& m_size, const char* fileName)
 {
-    ifstream ifs(fileName);
+    std::ifstream ifs(fileName);
     if (!ifs.is_open())
     {
-        cerr << "Cannot Open File\n";
+        std::cerr << "Cannot Open File\n";
         return;
     }
     ifs >> m_size;
@@ -21,9 +21,7 @@ void readFromFile(int*& m_array, int& m_size, const char* fileName)
 
 SortingAlgorithm convertStringToEnum(char* algorithmName)
 {
-    // cout << algorithmName << endl;
     if (strcmp(algorithmName, "bubble-sort") == 0) {
-        // cout << 1 << endl;
         return SortingAlgorithm::BubbleSort;
     }
     else if (strcmp(algorithmName, "radix-sort") == 0) {
@@ -68,7 +66,7 @@ void CommandLine1(int argc, char *argv[])
     sortingObject.setStrategy(convertStringToEnum(argv[2]), array, size);
     if (sortingObject.getStrategy() == nullptr)
     {
-        cerr << "Invalid algorithm!\n";
+        std::cerr << "Invalid algorithm!\n";
         return;
     }
     sortingObject.sort();
@@ -77,7 +75,6 @@ void CommandLine1(int argc, char *argv[])
     compareObject.setStrategy(convertStringToEnum(argv[2]), array, size);
     compareObject.sortWithComparison();
 
-    cout << 1 << endl;
     // write to "output.txt"
     sortingObject.writeToFile("output.txt");
 
@@ -119,7 +116,7 @@ void CommandLine2(int argc, char *argv[])
     sortingObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
     if (sortingObject.getStrategy() == nullptr)
     {
-        cerr << "Invalid algorithm!\n";
+        std::cerr << "Invalid algorithm!\n";
         return;
     }
     sortingObject.sort();
@@ -163,7 +160,7 @@ void CommandLine3(int argc, char *argv[])
     {
         GenerateData(array, array_size, i);
 
-        ofstream ofs("input_" + to_string(num[i]) + ".txt");
+        std::ofstream ofs("input_" + std::to_string(num[i]) + ".txt");
         ofs << array_size << "\n";
         for (int i = 0; i < array_size; i++)
         {
@@ -175,7 +172,7 @@ void CommandLine3(int argc, char *argv[])
         sortingObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
         if (sortingObject.getStrategy() == nullptr)
         {
-            cerr << "Invalid algorithm!\n";
+            std::cerr << "Invalid algorithm!\n";
             break;
         }
         sortingObject.sort();

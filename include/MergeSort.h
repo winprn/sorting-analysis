@@ -10,7 +10,7 @@ class MergeSort : public SortStrategy {
 
   void mergeSortWithComparison(int left, int right);
   void mergeTwoArraysWithComparison(int left, int mid, int right);
-  void sort() override;    
+  void sort() override;
   void sortWithComparison();
 };
 

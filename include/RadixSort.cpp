@@ -42,20 +42,19 @@ void RadixSort::countSort(int exp) {
 
 // The main function to that sorts m_array[]
 // of size n using Radix Sort
-void RadixSort::sort()
-{
-    m_timeStart = std::chrono::high_resolution_clock::now();
-    // Find the maximum number to
-    // know number of digits
-    int m = getMax();
+void RadixSort::sort() {
+  m_timeStart = std::chrono::high_resolution_clock::now();
+  // Find the maximum number to
+  // know number of digits
+  int m = getMax();
 
-    // Do counting sort for every digit.
-    // Note that instead of passing digit
-    // number, exp is passed. exp is 10^i
-    // where i is current digit number
-    for (int exp = 1; m / exp > 0; exp *= 10)
-        countSort(exp);
-    m_timeEnd = std::chrono::high_resolution_clock::now();
+  // Do counting sort for every digit.
+  // Note that instead of passing digit
+  // number, exp is passed. exp is 10^i
+  // where i is current digit number
+  for (int exp = 1; m / exp > 0; exp *= 10)
+    countSort(exp);
+  m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
 //================With Comparison================

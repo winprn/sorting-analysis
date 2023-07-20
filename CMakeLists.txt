@@ -36,4 +36,6 @@ add_executable(sorting_analysis
                include/SortContext.cpp
                include/SortStrategy.h
                include/SortStrategy.cpp
+               include/SortObject.h
+               include/SortObject.cpp
                tests/test.h external/doctest.h tests/test.cpp)

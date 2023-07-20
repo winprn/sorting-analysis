@@ -16,7 +16,7 @@ int* SortStrategy::getArray() const {
   return m_array;
 }
 
-int SortStrategy::getComparison() const {
+long long SortStrategy::getComparison() const {
   return m_count_comparison;
 }
 

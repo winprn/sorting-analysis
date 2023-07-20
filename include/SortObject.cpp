@@ -17,7 +17,7 @@ double SortObject::getDuration()
     return timeSort.getDuration();
 }
 
-int SortObject::getComparison()
+long long SortObject::getComparison()
 {
     return compareSort.getComparison();
 }

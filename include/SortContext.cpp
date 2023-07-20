@@ -19,7 +19,7 @@ void SortContext::setStrategy(SortingAlgorithm algo, int* a, int n) {
       strategy = new HeapSort(a, n);
       break;
     case SortingAlgorithm::MergeSort:
-      // strategy = new MergeSort(a, n);
+      strategy = new MergeSort(a, n);
       break;
     case SortingAlgorithm::QuickSort:
       //        strategy = new QuickSort(a, n);
@@ -34,7 +34,7 @@ void SortContext::setStrategy(SortingAlgorithm algo, int* a, int n) {
       //        strategy = new ShellSort(a, n);
       break;
     case SortingAlgorithm::CountingSort:
-      //        strategy = new CountingSort(a, n);
+              strategy = new CountingSort(a, n);
       break;
     case SortingAlgorithm::FlashSort:
       strategy = new FlashSort(a, n);

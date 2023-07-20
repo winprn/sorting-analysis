@@ -9,6 +9,7 @@
 #include "RadixSort.h"
 #include "SelectionSort.h"
 #include "ShakerSort.h"
+#include "CountingSort.h"
 #include "common.h"
 
 class SortContext : public SortStrategy {
@@ -23,7 +24,7 @@ class SortContext : public SortStrategy {
   void sort() { strategy->sort(); }
   void sortWithComparison() { strategy->sortWithComparison(); }
   void display() { strategy->display(); }
-  int getComparison() { return strategy->getComparison(); }
+  long long getComparison() { return strategy->getComparison(); }
   SortStrategy* getStrategy() { return strategy; }
   double getDuration() { return strategy->getDuration(); }
   void writeToFile(std::string FileName) { strategy->writeToFile(FileName); }

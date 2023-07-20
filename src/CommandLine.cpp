@@ -96,8 +96,8 @@ void CommandLine1(int argc, char *argv[])
     std::cout << "Input size: " << size << "\n";
     std::cout << "-------------------------\n";
     if (strcmp(argv[4], "-time") == 0 || strcmp(argv[4], "-both") == 0)
-        std::cout << "Running Time: " << sortingObject.getDuration()
-                  << " seconds\n";
+         std::cout << "Running Time: " << std::fixed << std::setprecision(5) << sortingObject.getDuration()
+                      << " s\n";
     if (strcmp(argv[4], "-comp") == 0 || strcmp(argv[4], "-both") == 0)
         std::cout << "Comparisions: " << compareObject.getComparison() << "\n";
     delete[] array;
@@ -148,8 +148,8 @@ void CommandLine2(int argc, char *argv[])
 
     std::cout << "-------------------------\n";
     if (strcmp(argv[5], "-time") == 0 || strcmp(argv[5], "-both") == 0)
-        std::cout << "Running Time: " << sortingObject.getDuration()
-                  << " seconds\n";
+         std::cout << "Running Time: " << std::fixed << std::setprecision(5) << sortingObject.getDuration()
+                      << " s\n";
     if (strcmp(argv[5], "-comp") == 0 || strcmp(argv[5], "-both") == 0)
         std::cout << "Comparisions: " << compareObject.getComparison() << "\n";
 
@@ -198,8 +198,8 @@ void CommandLine3(int argc, char *argv[])
         std::cout << "\nInput order: " << Orders[i] << "\n";
         std::cout << "-------------------------\n";
         if (strcmp(argv[4], "-time") == 0 || strcmp(argv[4], "-both") == 0)
-            std::cout << "Running Time: " << sortingObject.getDuration()
-                      << " seconds\n";
+            std::cout << "Running Time: " << std::fixed << std::setprecision(5) << sortingObject.getDuration()
+                      << " s\n";
         if (strcmp(argv[4], "-comp") == 0 || strcmp(argv[4], "-both") == 0)
             std::cout << "Comparisions: " << compareObject.getComparison() << "\n";
     }

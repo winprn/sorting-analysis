@@ -13,7 +13,7 @@ class SortObject
         bool checkValid();
         void sort();
         double getDuration();
-        int getComparison();
+        long long getComparison();
 };
 
 #endif

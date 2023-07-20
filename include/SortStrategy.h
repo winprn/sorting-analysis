@@ -14,7 +14,8 @@ class SortStrategy {
   int* m_array;
   std::chrono::high_resolution_clock::time_point m_timeStart;
   std::chrono::high_resolution_clock::time_point m_timeEnd;
-  int m_count_comparison = 0, m_size;
+  long long m_count_comparison = 0;
+  int m_size;
 
  public:
   SortStrategy();
@@ -24,7 +25,7 @@ class SortStrategy {
   virtual void sort() = 0;
   virtual void sortWithComparison() = 0;
   int* getArray() const;
-  int getComparison() const;
+  long long getComparison() const;
   int getSize() const;
 
   // return runtime in seconds

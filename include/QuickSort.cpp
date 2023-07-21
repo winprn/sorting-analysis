@@ -43,5 +43,6 @@ void QuickSort::quickSortWithComparison(int l, int r) {
 }
 
 void QuickSort::sortWithComparison() {
+  m_count_comparison = 0;
   quickSortWithComparison(0, m_size - 1);
 }

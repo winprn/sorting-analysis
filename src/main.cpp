@@ -48,27 +48,24 @@ int main(int argc, const char *argv[])
     }
     else
     {
-        std::cout << 1 << endl;
         std::ofstream ofs("RandomOrder.csv");
-        int nSortAlgo = 1;
+        int nSortAlgo = 3;
         int nDataSize = 6;
         int nDataOrder = 4;
 
         const char *dataOrder[] = {"-rand", "-nsorted", "-sorted", "-rev"};
-        const char *sortingName[] = {"heap-sort"};
+        const char *sortingName[] = {"heap-sort", "radix-sort", "merge-sort"};
         const int dataSize[] = {10000, 30000, 50000, 100000, 300000, 500000};
+
+        std::string Orders[] = {"Randomize", "Sorted", "Reversed", "Nearly Sorted"};
 
         const char *executionFile = ".\\sorting_analysis.exe";
         const char *mode = "a";
         const char *outputMode = "-both";
 
-        cout << nSortAlgo << '\n';
-        cout << nDataSize << '\n';
-        cout << executionFile << '\n';
-
         for (int order = 0; order < nDataOrder; ++order)
         {
-            ofs << dataOrder[order] << '\n';
+            ofs << Orders[order] << '\n';
             ofs << "Data size,";
             for (int i = 0; i < nDataSize; ++i)
                 ofs << dataSize[i] << ',' << ',';

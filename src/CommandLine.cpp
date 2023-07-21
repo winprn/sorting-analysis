@@ -200,7 +200,6 @@ void CommandLine2_CSV(int argc, const char* argv[], std::ofstream &ofs)
     }
     ofs << std::fixed << std::setprecision(5) << sortingObject.getDuration() << "s,";
     ofs << compareObject.getComparison() << ",";
-    std::cout << argv[3] << '\n';
     // deallocation
     delete[] array;
 }

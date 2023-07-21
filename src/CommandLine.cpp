@@ -19,7 +19,7 @@ void readFromFile(int *&m_array, int &m_size, const char *fileName)
     ifs.close();
 }
 
-SortingAlgorithm convertStringToEnum(char *algorithmName)
+SortingAlgorithm convertStringToEnum(const char *algorithmName)
 {
     if (strcmp(algorithmName, "bubble-sort") == 0)
     {
@@ -68,7 +68,7 @@ SortingAlgorithm convertStringToEnum(char *algorithmName)
     return SortingAlgorithm::QuickSort;
 }
 
-void CommandLine1(int argc, char *argv[])
+void CommandLine1(int argc, const char *argv[])
 {
     int *array = nullptr, size = 0;
     readFromFile(array, size, argv[3]);
@@ -103,7 +103,7 @@ void CommandLine1(int argc, char *argv[])
     delete[] array;
 }
 
-void CommandLine2(int argc, char *argv[])
+void CommandLine2(int argc, const char *argv[])
 {
     int array_size = std::atoi(argv[3]);
     int *array = new int[array_size];
@@ -157,7 +157,55 @@ void CommandLine2(int argc, char *argv[])
     delete[] array;
 }
 
-void CommandLine3(int argc, char *argv[])
+void CommandLine2_CSV(int argc, const char* argv[], std::ofstream &ofs)
+{
+    int array_size = std::atoi(argv[3]);
+    int *array = new int[array_size];
+    if (strcmp(argv[4], "-rand") == 0)
+    {
+        GenerateRandomData(array, array_size);
+    }
+    else if (strcmp(argv[4], "-nsorted") == 0)
+    {
+        GenerateNearlySortedData(array, array_size);
+    }
+    else if (strcmp(argv[4], "-sorted") == 0)
+    {
+        GenerateSortedData(array, array_size);
+    }
+    else if (strcmp(argv[4], "-rev") == 0)
+    {
+        GenerateReverseData(array, array_size);
+    }
+
+    SortContext sortingObject;
+    sortingObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
+    if (sortingObject.getStrategy() == nullptr)
+    {
+        std::cerr << "Invalid algorithm!\n";
+        return;
+    }
+    sortingObject.sort();
+
+    // write to "output.txt"
+
+    SortContext compareObject;
+    compareObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
+    compareObject.sortWithComparison();
+
+    // display
+    if (!ofs.is_open())
+    {
+        std::cout << "NOOOOOOOOO\n";
+    }
+    ofs << std::fixed << std::setprecision(5) << sortingObject.getDuration() << "s,";
+    ofs << compareObject.getComparison() << ",";
+    std::cout << argv[3] << '\n';
+    // deallocation
+    delete[] array;
+}
+
+void CommandLine3(int argc, const char *argv[])
 {
     int array_size = std::atoi(argv[3]);
     int *array = new int[array_size];
@@ -207,7 +255,7 @@ void CommandLine3(int argc, char *argv[])
     delete[] array;
 }
 
-void CommandLine4(int argc, char *argv[])
+void CommandLine4(int argc, const char *argv[])
 {
     // [Execution file] -c [Algorithm 1] [Algorithm 2] [Given input]
 
@@ -255,7 +303,7 @@ void writeArrayToFile(int *array, int array_size, const char* file)
     ofs.close();
 }
 
-void CommandLine5(int argc, char *argv[])
+void CommandLine5(int argc, const char *argv[])
 {
     // [Execution file] -c [Algorithm 1] [Algorithm 2] [Input size] [Input order]
 

@@ -6,12 +6,16 @@
 #include "common.h"
 #include "string.h"
 #include "iomanip"
+#include <fstream>
+#include <iostream>
 
-void CommandLine1(int argc, char* argv[]);
-void CommandLine2(int argc, char* argv[]);
-void CommandLine3(int argc, char* argv[]);
-void CommandLine4(int argc, char* argv[]);
-void CommandLine5(int argc, char* argv[]);
+void CommandLine1(int argc, const char* argv[]);
+void CommandLine2(int argc, const char* argv[]);
+void CommandLine2_CSV(int argc, const char* argv[], std::ofstream &ofs);
+
+void CommandLine3(int argc, const char* argv[]);
+void CommandLine4(int argc, const char* argv[]);
+void CommandLine5(int argc, const char* argv[]);
 SortingAlgorithm convertStringToEnum(char* algorithmName);
 
 #endif

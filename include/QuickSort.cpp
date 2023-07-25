@@ -4,7 +4,7 @@
 
 void QuickSort::quickSort(int l, int r) {
   if (l == r) return;
-  int pivot = m_array[l], left = l, right = r;
+  int pivot = m_array[l + rand() % (r - l + 1)], left = l, right = r;
   while (left <= right) {
     while (m_array[left] < pivot) ++left;
     while (pivot < m_array[right]) --right;

@@ -2,7 +2,7 @@
 #define SORTING_ANALYSIS_QUICKSORT_H
 
 #include "SortStrategy.h"
-class QuickSort : SortStrategy {
+class QuickSort : public SortStrategy {
 public:
   QuickSort(): SortStrategy(){}
   QuickSort(int *a, int n): SortStrategy(a, n){}

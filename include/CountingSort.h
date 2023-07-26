@@ -4,7 +4,7 @@
 #include "SortStrategy.h"
 #include "cstring"
 class CountingSort : public SortStrategy {
-  static const int MAX_VAL = 300005;
+  static const int MAX_VAL = 500005;
   int _cnt[MAX_VAL] = {0};
 
  public:

@@ -1,6 +1,7 @@
 #include "ShellSort.h"
 
 void ShellSort::sort() {
+  m_timeStart = std::chrono::high_resolution_clock::now();
   for (int g : gaps) {
     for (int i = g; i < m_size; i++) {
       int tmp = m_array[i], j = i;
@@ -10,6 +11,7 @@ void ShellSort::sort() {
       m_array[j] = tmp;
     }
   }
+  m_timeEnd = std::chrono::high_resolution_clock::now();
 }
 
 void ShellSort::sortWithComparison() {

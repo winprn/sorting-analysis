@@ -10,6 +10,8 @@
 #include "SelectionSort.h"
 #include "ShakerSort.h"
 #include "CountingSort.h"
+#include "QuickSort.h"
+#include "ShellSort.h"
 #include "common.h"
 
 class SortContext : public SortStrategy {

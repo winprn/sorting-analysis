@@ -271,12 +271,12 @@ void CommandLine4(int argc, const char *argv[])
     ifs.close();
 
     // sorting
-    SortObject first_algo(convertStringToEnum(argv[2]), array, array_size);
-    SortObject second_algo(convertStringToEnum(argv[3]), array, array_size);
+    SortContext first_algo(convertStringToEnum(argv[2]), array, array_size);
+    SortContext second_algo(convertStringToEnum(argv[3]), array, array_size);
 
-    if (!first_algo.checkValid() || !second_algo.checkValid())
+    if (first_algo.getStrategy() == nullptr || second_algo.getStrategy() == nullptr)
     {
-        std::cout << "Invalid algo\n";
+        std::cerr << "Invalid algorithm!\n";
         return;
     }
 
@@ -319,12 +319,12 @@ void CommandLine5(int argc, const char *argv[])
 
     const char* filename = "input.txt"; 
     writeArrayToFile(array, array_size, filename);
-    SortObject first_algo(convertStringToEnum(argv[2]), array, array_size);
-    SortObject second_algo(convertStringToEnum(argv[3]), array, array_size);
+    SortContext first_algo(convertStringToEnum(argv[2]), array, array_size);
+    SortContext second_algo(convertStringToEnum(argv[3]), array, array_size);
 
-    if (!first_algo.checkValid() || !second_algo.checkValid())
+    if (first_algo.getStrategy() == nullptr || second_algo.getStrategy() == nullptr)
     {
-        std::cout << "Invalid algo\n";
+        std::cerr << "Invalid algorithm!\n";
         return;
     }
 

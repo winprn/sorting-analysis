@@ -1,7 +1,6 @@
 #ifndef SORTING_ANALYSIS_COMMAND_LINE_H
 #define SORTING_ANALYSIS_COMMAND_LINE_H
 #include "../include/SortContext.h"
-#include "../include/SortObject.h"
 #include "utils/DataGenerator.h"
 #include "../include/common.h"
 #include "string.h"

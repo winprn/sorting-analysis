@@ -21,6 +21,9 @@ class SortContext : public SortStrategy {
  public:
   SortContext() : strategy(nullptr) {}
   SortContext(SortStrategy* strat_) : strategy(strat_) {}
+  SortContext(SortingAlgorithm algo, int* a, int n) {
+    setStrategy(algo, a, n);
+  }
   ~SortContext();
   void setStrategy(SortingAlgorithm algo, int* a, int n);
   void sort() { strategy->sort(); }

@@ -1,6 +1,4 @@
-#include "QuickSort.h"
-
-#include "QuickSort.h"
+#include "../../include/QuickSort.h"
 
 int getRandom(int l, int r) {
   srand(time(NULL));

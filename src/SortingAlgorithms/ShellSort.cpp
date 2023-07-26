@@ -1,4 +1,4 @@
-#include "ShellSort.h"
+#include "../../include/ShellSort.h"
 
 void ShellSort::sort() {
   m_timeStart = std::chrono::high_resolution_clock::now();

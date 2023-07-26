@@ -1,4 +1,4 @@
-#include "SortObject.h"
+#include "../../include/SortObject.h"
 
 SortObject::SortObject(SortingAlgorithm algo, int* a, int n)
 {

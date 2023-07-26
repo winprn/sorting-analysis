@@ -1,4 +1,4 @@
-#include "InsertionSort.h"
+#include "../../include/InsertionSort.h"
 
 void InsertionSort::sort() {
   m_timeStart = std::chrono::high_resolution_clock::now();

@@ -1,4 +1,4 @@
-#include "CountingSort.h"
+#include "../../include/CountingSort.h"
 
 void CountingSort::sort() {
   m_timeStart = std::chrono::high_resolution_clock::now();

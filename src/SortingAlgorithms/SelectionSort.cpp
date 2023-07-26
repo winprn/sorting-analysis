@@ -1,4 +1,4 @@
-#include "SelectionSort.h"
+#include "../../include/SelectionSort.h"
 #include <iostream>
 
 void SelectionSort::sort() {

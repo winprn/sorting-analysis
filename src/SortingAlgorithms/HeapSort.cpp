@@ -1,4 +1,4 @@
-#include "HeapSort.h"
+#include "../../include/HeapSort.h"
 
 // https://www.geeksforgeeks.org/heap-sort/
 

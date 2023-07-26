@@ -1,4 +1,4 @@
-#include "MergeSort.h"
+#include "../../include/MergeSort.h"
 
 void MergeSort::mergeSort(int left, int right) {
   if (left < right) {

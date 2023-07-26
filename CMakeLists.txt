@@ -6,36 +6,36 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(include)
 
 add_executable(sorting_analysis
-               src/DataGenerator.h
-               src/DataGenerator.cpp
+               src/utils/DataGenerator.h
+               src/utils/DataGenerator.cpp
                src/CommandLine.h
                src/CommandLine.cpp
                src/main.cpp
                include/common.h
                include/BubbleSort.h
-               include/BubbleSort.cpp
+               src/SortingAlgorithms/BubbleSort.cpp
                include/CountingSort.h
-               include/CountingSort.cpp
+               src/SortingAlgorithms/CountingSort.cpp
                include/FlashSort.h
-               include/FlashSort.cpp
+               src/SortingAlgorithms/FlashSort.cpp
                include/InsertionSort.h
-               include/InsertionSort.cpp
+               src/SortingAlgorithms/InsertionSort.cpp
                include/MergeSort.h
-               include/MergeSort.cpp
+               src/SortingAlgorithms/MergeSort.cpp
                include/RadixSort.h
-               include/RadixSort.cpp
+               src/SortingAlgorithms/RadixSort.cpp
                include/SelectionSort.h
-               include/SelectionSort.cpp
+               src/SortingAlgorithms/SelectionSort.cpp
                include/HeapSort.h
-               include/HeapSort.cpp
+               src/SortingAlgorithms/HeapSort.cpp
                include/ShakerSort.h
-               include/ShakerSort.cpp
+               src/SortingAlgorithms/ShakerSort.cpp
                include/ShellSort.h
-               include/ShellSort.cpp
+               src/SortingAlgorithms/ShellSort.cpp
+               include/QuickSort.h
+               src/SortingAlgorithms/QuickSort.cpp
                include/SortContext.h
-               include/SortContext.cpp
+               src/SortingContext/SortContext.cpp
                include/SortStrategy.h
-               include/SortStrategy.cpp
-               include/SortObject.h
-               include/SortObject.cpp
-               tests/test.h external/doctest.h tests/test.cpp include/QuickSort.h include/QuickSort.cpp)
+               src/SortingStrategy/SortStrategy.cpp
+               src/tests/test.h external/doctest.h src/tests/test.cpp)

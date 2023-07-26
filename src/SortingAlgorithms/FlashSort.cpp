@@ -1,4 +1,4 @@
-#include "FlashSort.h"
+#include "../../include/FlashSort.h"
 
 void swap(int& a, int& b) {
   int temp = a;

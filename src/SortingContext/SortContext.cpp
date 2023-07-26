@@ -1,4 +1,4 @@
-#include "SortContext.h"
+#include "../../include/SortContext.h"
 
 void SortContext::setStrategy(SortingAlgorithm algo, int* a, int n) {
   if (strategy) {

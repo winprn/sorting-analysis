@@ -2,8 +2,8 @@
 #define SORTING_ANALYSIS_COMMAND_LINE_H
 #include "../include/SortContext.h"
 #include "../include/SortObject.h"
-#include "DataGenerator.h"
-#include "common.h"
+#include "utils/DataGenerator.h"
+#include "../include/common.h"
 #include "string.h"
 #include "iomanip"
 #include <fstream>

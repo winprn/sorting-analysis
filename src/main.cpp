@@ -49,15 +49,15 @@ int main(int argc, const char *argv[])
     else
     {
         std::ofstream ofs("RandomOrder.csv");
-        int nSortAlgo = 3;
+        int nSortAlgo = 11;
         int nDataSize = 6;
         int nDataOrder = 4;
 
         const char *dataOrder[] = {"-rand", "-nsorted", "-sorted", "-rev"};
-        const char *sortingName[] = {"heap-sort", "radix-sort", "merge-sort"};
+        const char *sortingName[] = {"heap-sort", "radix-sort", "merge-sort", "bubble-sort", "selection-sort", "insertion-sort", "quick-sort", "shaker-sort", "shell-sort", "counting-sort", "flash-sort"};
         const int dataSize[] = {10000, 30000, 50000, 100000, 300000, 500000};
 
-        std::string Orders[] = {"Randomize", "Sorted", "Reversed", "Nearly Sorted"};
+        std::string Orders[] = {"Random", "Nearly Sorted", "Sorted", "Reversed"};
 
         const char *executionFile = ".\\sorting_analysis.exe";
         const char *mode = "a";

@@ -124,6 +124,10 @@ void CommandLine2(int argc, const char *argv[])
         GenerateReverseData(array, array_size);
     }
 
+    // write to input file
+    const char* filename = "input.txt"; 
+    writeArrayToFile(array, array_size, filename);
+
     SortContext sortingObject;
     sortingObject.setStrategy(convertStringToEnum(argv[2]), array, array_size);
     if (sortingObject.getStrategy() == nullptr)
@@ -295,7 +299,7 @@ void CommandLine4(int argc, const char *argv[])
 void writeArrayToFile(int *array, int array_size, const char* file)
 {
     std::ofstream ofs;
-    ofs.open("input.txt");
+    ofs.open(file);
     ofs << array_size << '\n';
     for (int i = 0; i < array_size; ++i)
         ofs << array[i] << ' ';
